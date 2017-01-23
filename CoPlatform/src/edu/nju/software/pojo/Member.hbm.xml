@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="edu.nju.software.pojo">
+    <class name="Member" table="member">
+        <id name="id" column="id">
+            <generator class="increment" />
+        </id>
+        <property name="name" type="string" column="name" />
+        <property name="companyId" type="integer" column="company_id" />
+        <property name="workId" type="string" column="work_id" />
+        <property name="password" type="string" column="password" />
+        <property name="wxNumber" type="string" column="wx_number" />
+        <property name="qqNumber" type="string" column="qq_number" />
+        <property name="phone" type="string" column="phone" />
+        <property name="openId" type="string" column="open_id" />
+    </class>
+
+</hibernate-mapping>

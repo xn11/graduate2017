@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="edu.nju.software.pojo">
+    <class name="Log" table="log">
+        <id name="id" column="id">
+            <generator class="increment" />
+        </id>
+        <property name="title" type="string" column="title" />
+        <property name="description" type="string" column="description" />
+        <many-to-one name="project" column="project_id" lazy="false" />
+        <many-to-one name="task" column="task_id" lazy="false" />
+        <property name="originStatus" type="integer" column="origin_status" />
+        <property name="currentStatus" type="integer" column="current_status" />
+        <property name="createdTime" type="timestamp" column="created_time" />
+        <property name="companyId" type="integer" column="company_id" />
+        <property name="creatorId" type="integer" column="creator_id" />
+        <property name="creatorType" type="integer" column="creator_type" />
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="edu.nju.software.pojo">
+    <class name="Task" table="task">
+        <id name="id" column="id">
+            <generator class="increment" />
+        </id>
+        <property name="projectId" type="integer" column="project_id" />
+        <property name="name" type="string" column="name" />
+        <property name="description" type="string" column="description" />
+        <property name="parentId" type="integer" column="parent_id" />
+        <property name="startTime" type="timestamp" column="start_time" />
+        <property name="endTime" type="timestamp" column="end_time" />
+        <property name="status" type="integer" column="status_id" />
+        <property name="depth" type="integer" column="depth" />
+        <property name="path" type="string" column="path" />
+        <property name="isLeaf" type="boolean" column="is_leaf" />
+    </class>
+
+</hibernate-mapping>

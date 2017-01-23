@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="edu.nju.software.pojo">
+    <class name="Project" table="project">
+        <id name="id" column="id">
+            <generator class="increment" />
+        </id>
+        <property name="companyId" type="integer" column="company_id" />
+        <property name="name" type="string" column="name" />
+        <property name="description" type="string" column="description" />
+        <property name="startTime" type="timestamp" column="start_time" />
+        <property name="endTime" type="timestamp" column="end_time" />
+        <property name="progress" type="double" column="progress" />
+    </class>
+
+</hibernate-mapping>

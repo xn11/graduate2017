@@ -1,0 +1,173 @@
+@CHARSET "UTF-8";
+
+body {
+	font-family: "微软雅黑";
+	font-size: 14px;
+}
+
+a {
+	text-decoration: none;
+}
+
+a.login {
+	text-align: center;
+	width: 160px;
+}
+
+.center {
+	text-align: center;
+}
+
+div.header {
+	/*background-color: #3371B7;*/
+	
+}
+
+div.input-item {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 40px;
+	min-width: 300px;
+}
+
+ul.nav {
+	float: left;
+}
+
+ul.nav>li {
+	font-size: 16px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+div.container-body {
+	width: 90%;
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 50px;
+}
+
+div.taskList {
+	padding: 20px 20px 0 20px;
+}
+
+.bottom-line {
+	border-bottom: 1px #dddddd solid;
+}
+
+.project-item {
+	padding-top: 10px;
+}
+
+.create-button {
+	float: right;
+}
+
+table.taskList-table {
+	margin-top: 10px;
+}
+
+div.nav-container {
+	background-color: #2d96ff;
+}
+
+div.nav-container .navbar-nav>li>a {
+	color: #ffffff;
+}
+
+.nav-username {
+	color: rgb(215, 215, 215);
+	text-shadow: 0 1px 0 rgba(255, 255, 255, .25);
+	padding-top: 15px;
+	padding-bottom: 15px;
+	line-height: 20px;
+	/* position: relative; */
+	/* display: block; */
+}
+
+.nav-logout {
+	padding-left: 0px;
+}
+
+.nav-rightblock{
+	float:right;
+}
+
+.logo {
+	width: 200px;
+	height: 40px;
+	position: absolute;
+	left: 10px;
+	top: 0;
+}
+
+.navi-user-pic {
+	height: 40px;
+	position: absolute;
+	left: 10px;
+	top: 0;
+}
+
+.login-body {
+	background-color: #2d96ff;
+}
+
+.submit-button {
+	margin-top: 20px;
+}
+
+.news_title {
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.news_title p {
+	font-size: 20px;
+	font-family: "微软雅黑";
+}
+
+.news_title p.time {
+	font-size: 12px;
+	font-family: "微软雅黑";
+	color: #aaaaaa;
+}
+
+.news_content {
+	width: 80%;
+	max-width: 800px;
+	min-width: 400px;
+	padding-left: 20%;
+	padding-right: 20%;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+	border-top: none;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+	background-color: #2d96ff;
+}
+
+.dropdown-menu {
+	background-color: #2d96ff;
+}
+
+.dropdown-menu>li:hover, .dropdown-menu>li>a:hover{
+	display: block;
+	padding: 3px 20px;
+	clear: both;
+	font-weight: 400;
+	line-height: 1.42857143;
+	color: #333;
+	white-space: nowrap;
+	background-color: #2d96ff;
+}
+
+.taskEmployee {
+	margin: 0 auto;
+	padding: 0.1em 0.5em 0.1em 0.5em;
+	background-color: #2d96ff;
+	border-radius: 4px;
+}
