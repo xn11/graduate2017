@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                     http://www.springframework.org/schema/context
+                     http://www.springframework.org/schema/context/spring-context-3.0.xsd
+                     http://www.springframework.org/schema/aop
+                     http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+                     http://www.springframework.org/schema/tx
+                     http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="20000000" />
+	</bean>
+	<!-- 数据库连接配置 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="${c3p0.driverClass}"></property>
+		<property name="jdbcUrl" value="${c3p0.url}"></property>
+		<property name="user" value="${c3p0.user}"></property>
+		<property name="password" value="${c3p0.password}"></property>
+		<property name="acquireIncrement" value="${c3p0.acquireIncrement}"></property>
+		<property name="initialPoolSize" value="${c3p0.initialPoolSize}"></property>
+		<property name="maxIdleTime" value="${c3p0.maxIdleTime}"></property>
+		<property name="maxPoolSize" value="${c3p0.maxPoolSize}"></property>
+		<property name="minPoolSize" value="${c3p0.minPoolSize}"></property>
+		<property name="acquireRetryDelay" value="1000"></property>
+		<property name="acquireRetryAttempts" value="60"></property>
+		<property name="breakAfterAcquireFailure" value="false"></property>
+	</bean>
+
+	<!-- 属性文件读入 -->
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>/WEB-INF/jdbc.properties</value>
+				<value>/WEB-INF/hibernate.properties</value>
+			</list>
+		</property>
+	</bean>
+	<!--Hibernate SessionFatory -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<!-- <property name="lobHandler" ref="lobHandler" /> -->
+		<property name="configLocations">
+			<list>
+				<value>/WEB-INF/hibernate.cfg.xml</value>
+			</list>
+		</property>
+		<!-- <property name="configurationClass" value="org.hibernate.cfg.AnnotationConfiguration" 
+			/> -->
+		<property name="mappingDirectoryLocations">
+			<list>
+				<value>
+					classpath*:/edu/nju/software/pojo/
+				</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					${hibernate.dialect}
+				</prop>
+				<prop key="hibernate.show_sql">
+					${hibernate.show_sql}
+				</prop>
+			</props>
+		</property>
+	</bean>
+	<!-- 定义事务管理器 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- 定义事务 -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			  <tx:method name="get*" read-only="false" propagation="NOT_SUPPORTED"/>
+			   <tx:method name="find*" read-only="false" propagation="NOT_SUPPORTED"/>
+			   <tx:method name="save*" propagation="REQUIRED"/>
+			   <tx:method name="create*" propagation="REQUIRED"/>
+			   <tx:method name="update*" propagation="REQUIRED"/>
+			   <tx:method name="delete*" propagation="REQUIRED"/>
+		</tx:attributes>
+	</tx:advice>
+
+	<!-- 定义切面 -->
+	<!-- 对于getHibernateTemplate的查询相关的方法，如果出现数据库异常，则直接抛出DataAccessException，而与事务拦截器无关 
+		而对于增删改方法，如果出现数据库异常，则当下不会抛出异常，而是在切面抛出 如果切面抛出DataAccessException，则事务回滚 因此如果在切面内部捕获了DataAccessException而导致没有抛出，则事务不会回滚 -->
+	<aop:config>
+		<aop:pointcut id="services"
+			expression="execution(* edu.nju.software.service.impl.*.*(..))" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="services" />
+	</aop:config>
+	
+</beans>
