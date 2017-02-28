@@ -10,14 +10,14 @@ import org.springframework.stereotype.Component;
 import org.sword.wechat4j.message.CustomerMsg;
 import org.sword.wechat4j.response.ArticleResponse;
 
-import edu.nju.software.common.EmployeeType;
-import edu.nju.software.common.TaskStatus;
-import edu.nju.software.pojo.Admin;
-import edu.nju.software.pojo.Log;
-import edu.nju.software.pojo.Member;
-import edu.nju.software.pojo.News;
-import edu.nju.software.pojo.OutEmployee;
-import edu.nju.software.pojo.SystemAdmin;
+import cebbank.gage.pojo.User;
+import cebbank.gare.common.EmployeeType;
+import cebbank.gare.common.TaskStatus;
+import cebbank.gage.pojo.Log;
+import cebbank.gage.pojo.Member;
+import cebbank.gage.pojo.News;
+import cebbank.gage.pojo.OutEmployee;
+import cebbank.gage.pojo.SystemAdmin;
 import edu.nju.software.service.AdminService;
 import edu.nju.software.service.MemberService;
 import edu.nju.software.service.OutEmployeeService;
@@ -163,9 +163,9 @@ public class WechatBroadcast {
 					name += "某外聘人员";
 				}
 			} else if (change.getCreatorType() == EmployeeType.ADMIN) {
-				GeneralResult<Admin> adminResult = adminService.getById(change
+				GeneralResult<User> adminResult = adminService.getById(change
 						.getCreatorId());
-				Admin admin = adminResult.getData();
+				User admin = adminResult.getData();
 
 				if (null != admin) {
 					name = name + "管理员" + admin.getName();

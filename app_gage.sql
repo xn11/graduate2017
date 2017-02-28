@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2017-02-27 00:40:56
+-- Generation Time: 2017-03-01 00:34:51
 -- 服务器版本： 5.6.21
 -- PHP Version: 5.6.2
 
@@ -201,7 +201,7 @@ CREATE TABLE IF NOT EXISTS `role_view` (
 `id` int(11) NOT NULL,
   `role_id` int(11) NOT NULL,
   `view_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='暂时用常量';
 
 -- --------------------------------------------------------
 
@@ -241,8 +241,8 @@ CREATE TABLE IF NOT EXISTS `st_organization` (
 --
 
 CREATE TABLE IF NOT EXISTS `user` (
-  `uid` int(11) NOT NULL,
-  `uname` varchar(50) DEFAULT NULL,
+`id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL COMMENT '（员工s+id，监管机构r+id，监管员=客户企业c+id）',
   `role_id` int(11) NOT NULL,
   `password` varchar(50) NOT NULL,
   `telephone` varchar(50) DEFAULT NULL,
@@ -260,6 +260,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 CREATE TABLE IF NOT EXISTS `warehouse_list` (
+`id` int(11) NOT NULL,
   `company_id` int(11) NOT NULL,
   `gage_id` int(11) NOT NULL,
   `quantity` double NOT NULL,
@@ -296,6 +297,7 @@ CREATE TABLE IF NOT EXISTS `warning` (
 --
 
 CREATE TABLE IF NOT EXISTS `_config` (
+`id` int(11) NOT NULL,
   `key` varchar(50) NOT NULL,
   `value` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -324,7 +326,7 @@ CREATE TABLE IF NOT EXISTS `_view` (
   `parent_name` varchar(50) DEFAULT NULL,
   `level` int(11) DEFAULT NULL,
   `url` varchar(150) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='暂时enum代替';
 
 --
 -- Indexes for dumped tables
@@ -412,19 +414,25 @@ ALTER TABLE `st_organization`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
- ADD PRIMARY KEY (`uid`), ADD KEY `role_id` (`role_id`);
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `uname` (`name`), ADD KEY `role_id` (`role_id`);
 
 --
 -- Indexes for table `warehouse_list`
 --
 ALTER TABLE `warehouse_list`
- ADD PRIMARY KEY (`company_id`,`gage_id`,`owner`), ADD KEY `gage_id` (`gage_id`), ADD KEY `submitter_id` (`submitter_id`);
+ ADD PRIMARY KEY (`id`), ADD KEY `submitter_id` (`submitter_id`), ADD KEY `gage_id` (`gage_id`);
 
 --
 -- Indexes for table `warning`
 --
 ALTER TABLE `warning`
  ADD PRIMARY KEY (`id`), ADD KEY `company_id` (`company_id`), ADD KEY `gage_id` (`gage_id`), ADD KEY `from_id` (`from_id`), ADD KEY `handle_id` (`handle_id`);
+
+--
+-- Indexes for table `_config`
+--
+ALTER TABLE `_config`
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `_role`
@@ -483,9 +491,24 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `st_organization`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `warehouse_list`
+--
+ALTER TABLE `warehouse_list`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `warning`
 --
 ALTER TABLE `warning`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `_config`
+--
+ALTER TABLE `_config`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `_role`
@@ -528,6 +551,12 @@ ADD CONSTRAINT `ex_staff_ibfk_1` FOREIGN KEY (`department_id`) REFERENCES `st_de
 --
 ALTER TABLE `gage_price`
 ADD CONSTRAINT `gage_price_ibfk_1` FOREIGN KEY (`gage_id`) REFERENCES `gage` (`id`);
+
+--
+-- 限制表 `mail`
+--
+ALTER TABLE `mail`
+ADD CONSTRAINT `mail_ibfk_1` FOREIGN KEY (`from_uid`) REFERENCES `user` (`id`);
 
 --
 -- 限制表 `regulate_account`
@@ -574,9 +603,8 @@ ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `_role` (`id`);
 -- 限制表 `warehouse_list`
 --
 ALTER TABLE `warehouse_list`
-ADD CONSTRAINT `warehouse_list_ibfk_1` FOREIGN KEY (`company_id`) REFERENCES `ex_company` (`id`),
-ADD CONSTRAINT `warehouse_list_ibfk_2` FOREIGN KEY (`gage_id`) REFERENCES `gage` (`id`),
-ADD CONSTRAINT `warehouse_list_ibfk_3` FOREIGN KEY (`submitter_id`) REFERENCES `user` (`uid`);
+ADD CONSTRAINT `warehouse_list_ibfk_1` FOREIGN KEY (`gage_id`) REFERENCES `gage` (`id`),
+ADD CONSTRAINT `warehouse_list_ibfk_2` FOREIGN KEY (`submitter_id`) REFERENCES `user` (`id`);
 
 --
 -- 限制表 `warning`
@@ -584,8 +612,8 @@ ADD CONSTRAINT `warehouse_list_ibfk_3` FOREIGN KEY (`submitter_id`) REFERENCES `
 ALTER TABLE `warning`
 ADD CONSTRAINT `warning_ibfk_1` FOREIGN KEY (`company_id`) REFERENCES `ex_company` (`id`),
 ADD CONSTRAINT `warning_ibfk_2` FOREIGN KEY (`gage_id`) REFERENCES `gage` (`id`),
-ADD CONSTRAINT `warning_ibfk_3` FOREIGN KEY (`from_id`) REFERENCES `user` (`uid`),
-ADD CONSTRAINT `warning_ibfk_4` FOREIGN KEY (`handle_id`) REFERENCES `user` (`uid`);
+ADD CONSTRAINT `warning_ibfk_3` FOREIGN KEY (`from_id`) REFERENCES `user` (`id`),
+ADD CONSTRAINT `warning_ibfk_4` FOREIGN KEY (`handle_id`) REFERENCES `user` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

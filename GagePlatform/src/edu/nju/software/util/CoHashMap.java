@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 
 import com.google.gson.Gson;
 
-import edu.nju.software.pojo.Admin;
+import cebbank.gage.pojo.User;
 
 public class CoHashMap extends HashMap<String, Object>{
 
@@ -42,7 +42,7 @@ public class CoHashMap extends HashMap<String, Object>{
 			logger.error(e.getMessage());
 		}*/
 		String sessionId = request.getSession().getId();
-		Admin admin = (Admin) UserInfoStorage.getAdmin(sessionId);
+		User admin = (User) UserInfoStorage.getAdmin(sessionId);
 		System.out.println("coHashMap sessionId: " + sessionId);
 		if(null != admin) {
 			logger.debug("admin not null");

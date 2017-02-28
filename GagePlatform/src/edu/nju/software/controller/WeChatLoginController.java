@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import edu.nju.software.pojo.Member;
-import edu.nju.software.pojo.OutEmployee;
+import cebbank.gage.pojo.Member;
+import cebbank.gage.pojo.OutEmployee;
 import edu.nju.software.service.MemberService;
 import edu.nju.software.service.OutEmployeeService;
 import edu.nju.software.util.GeneralResult;

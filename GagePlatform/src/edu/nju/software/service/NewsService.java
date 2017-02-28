@@ -2,7 +2,7 @@ package edu.nju.software.service;
 
 import java.util.List;
 
-import edu.nju.software.pojo.News;
+import cebbank.gage.pojo.News;
 import edu.nju.software.util.GeneralResult;
 import edu.nju.software.util.NoDataResult;
 

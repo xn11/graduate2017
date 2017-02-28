@@ -2,8 +2,8 @@ package edu.nju.software.service;
 
 import java.util.List;
 
-import edu.nju.software.pojo.Member;
-import edu.nju.software.pojo.Task;
+import cebbank.gage.pojo.Member;
+import cebbank.gage.pojo.Task;
 import edu.nju.software.util.GeneralResult;
 import edu.nju.software.util.NoDataResult;
 

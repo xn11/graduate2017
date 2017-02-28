@@ -15,8 +15,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.sword.wechat4j.response.ArticleResponse;
 
-import edu.nju.software.pojo.Member;
-import edu.nju.software.pojo.News;
+import cebbank.gage.pojo.Member;
+import cebbank.gage.pojo.News;
 import edu.nju.software.service.MemberService;
 import edu.nju.software.service.NewsService;
 import edu.nju.software.util.GeneralResult;

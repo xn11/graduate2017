@@ -16,19 +16,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
-import edu.nju.software.common.EmployeeType;
-import edu.nju.software.common.TaskStatus;
-import edu.nju.software.dao.LogDao;
-import edu.nju.software.dao.ProjectDao;
-import edu.nju.software.dao.TaskDao;
-import edu.nju.software.pojo.Admin;
-import edu.nju.software.pojo.Log;
-import edu.nju.software.pojo.Member;
-import edu.nju.software.pojo.OutEmployee;
-import edu.nju.software.pojo.Project;
-import edu.nju.software.pojo.SystemAdmin;
-import edu.nju.software.pojo.Task;
-import edu.nju.software.pojo.TaskAssign;
+import cebbank.gage.pojo.User;
+import cebbank.gage.pojo.Log;
+import cebbank.gage.pojo.Member;
+import cebbank.gage.pojo.OutEmployee;
+import cebbank.gage.pojo.Project;
+import cebbank.gage.pojo.SystemAdmin;
+import cebbank.gage.pojo.Task;
+import cebbank.gage.pojo.TaskAssign;
+import cebbank.gare.common.EmployeeType;
+import cebbank.gare.common.TaskStatus;
+import cebbank.gare.dao.LogDao;
+import cebbank.gare.dao.ProjectDao;
+import cebbank.gare.dao.TaskDao;
 import edu.nju.software.service.WorkService;
 import edu.nju.software.util.CoCacheManager;
 import edu.nju.software.util.GeneralResult;
@@ -278,12 +278,12 @@ public class WorkServiceImpl implements WorkService {
 					.getProjectId());
 
 			// 获取creatorId和creatorType
-			Admin admin = null;
+			User admin = null;
 			SystemAdmin systemAdmin = null;
 			Member member = null;
 			OutEmployee outEmployee = null;
 
-			if (null != (admin = (Admin) UserInfoStorage.getAdmin(sessionId))) {
+			if (null != (admin = (User) UserInfoStorage.getAdmin(sessionId))) {
 				creatorId = admin.getId();
 				creatorType = EmployeeType.ADMIN;
 			} else if (null != (systemAdmin = (SystemAdmin) UserInfoStorage

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import edu.nju.software.pojo.Admin;
+import cebbank.gage.pojo.User;
 import edu.nju.software.service.AdminService;
 import edu.nju.software.util.GeneralResult;
 import edu.nju.software.util.ResultCode;
@@ -44,10 +44,10 @@ public class LoginController {
 
 		mail = mail.trim();
 		password = password.trim();
-		GeneralResult<Admin> adminResult = adminService.getByMailAndPassword(
+		GeneralResult<User> adminResult = adminService.getByMailAndPassword(
 				mail, password);
 		if (adminResult.getResultCode() == ResultCode.NORMAL) {
-			Admin admin = adminResult.getData();
+			User admin = adminResult.getData();
 			// for normal environment
 			/*
 			 * Gson gson = new Gson(); CoUtils.addCookie(response,

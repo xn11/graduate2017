@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
-import edu.nju.software.dao.AdminDao;
-import edu.nju.software.pojo.Admin;
+import cebbank.gage.pojo.User;
+import cebbank.gare.dao.AdminDao;
 import edu.nju.software.service.AdminService;
 import edu.nju.software.util.CoCacheManager;
 import edu.nju.software.util.GeneralResult;
@@ -29,10 +29,10 @@ public class AdminServiceImpl implements AdminService {
 	public AdminServiceImpl() {}
 
 	@Override
-	public GeneralResult<List<Admin>> getAll() {
-		GeneralResult<List<Admin>> result = new GeneralResult<List<Admin>>();
+	public GeneralResult<List<User>> getAll() {
+		GeneralResult<List<User>> result = new GeneralResult<List<User>>();
 		@SuppressWarnings("unchecked")
-		List<Admin> adminList = (List<Admin>) CoCacheManager.get(ALL_ADMIN_CACHE_KEY);
+		List<User> adminList = (List<User>) CoCacheManager.get(ALL_ADMIN_CACHE_KEY);
 		if(null != adminList && !adminList.isEmpty()) {
 			result.setData(adminList);
 		}else {
@@ -54,11 +54,11 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public GeneralResult<Admin> getById(int id) {
-		GeneralResult<Admin> result = new GeneralResult<Admin>();
-		GeneralResult<List<Admin>> allResult = getAll();
+	public GeneralResult<User> getById(int id) {
+		GeneralResult<User> result = new GeneralResult<User>();
+		GeneralResult<List<User>> allResult = getAll();
 		if(allResult.getResultCode() == ResultCode.NORMAL) {
-			for(Admin admin : allResult.getData()) {
+			for(User admin : allResult.getData()) {
 				if(admin.getId() == id) {
 					result.setData(admin);
 					break;
@@ -77,17 +77,17 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public GeneralResult<Admin> getByMailAndPassword(String mail,
+	public GeneralResult<User> getByMailAndPassword(String mail,
 			String password) {
-		GeneralResult<Admin> result = new GeneralResult<Admin>();
+		GeneralResult<User> result = new GeneralResult<User>();
 		if(StringUtils.isBlank(mail) || StringUtils.isBlank(password)) {
 			result.setResultCode(ResultCode.E_INVALID_PARAMETER);
 			return result;
 		}
 		
-		GeneralResult<List<Admin>> allResult = getAll();
+		GeneralResult<List<User>> allResult = getAll();
 		if(allResult.getResultCode() == ResultCode.NORMAL) {
-			for(Admin admin : allResult.getData()) {
+			for(User admin : allResult.getData()) {
 				if(admin.getMail().equals(mail) && admin.getPassword().equals(password)) {
 					result.setData(admin);
 					break;
@@ -106,7 +106,7 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public GeneralResult<Integer> create(Admin admin) {
+	public GeneralResult<Integer> create(User admin) {
 		GeneralResult<Integer> result = new GeneralResult<Integer>();
 		try {
 			int outId = adminDao.create(admin);
@@ -120,7 +120,7 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public NoDataResult update(Admin admin) {
+	public NoDataResult update(User admin) {
 		NoDataResult result = new NoDataResult();
 		try{
 			adminDao.update(admin);

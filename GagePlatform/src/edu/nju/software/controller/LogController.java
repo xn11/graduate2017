@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import edu.nju.software.pojo.Log;
-import edu.nju.software.pojo.Project;
-import edu.nju.software.pojo.Task;
+import cebbank.gage.pojo.Log;
+import cebbank.gage.pojo.Project;
+import cebbank.gage.pojo.Task;
 import edu.nju.software.service.LogService;
 import edu.nju.software.util.CoHashMap;
 import edu.nju.software.util.CoUtils;

@@ -19,10 +19,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import edu.nju.software.pojo.Company;
-import edu.nju.software.pojo.Member;
-import edu.nju.software.pojo.OutEmployee;
-import edu.nju.software.pojo.Task;
+import cebbank.gage.pojo.Company;
+import cebbank.gage.pojo.Member;
+import cebbank.gage.pojo.OutEmployee;
+import cebbank.gage.pojo.Task;
 import edu.nju.software.service.CompanyService;
 import edu.nju.software.service.MemberService;
 import edu.nju.software.service.OutEmployeeService;

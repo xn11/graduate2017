@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
-import edu.nju.software.dao.CompanyDao;
-import edu.nju.software.pojo.Company;
+import cebbank.gage.pojo.Company;
+import cebbank.gare.dao.CompanyDao;
 import edu.nju.software.service.CompanyService;
 import edu.nju.software.util.CoCacheManager;
 import edu.nju.software.util.GeneralResult;

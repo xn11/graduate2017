@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import edu.nju.software.pojo.News;
+import cebbank.gage.pojo.News;
 import edu.nju.software.service.NewsService;
 import edu.nju.software.util.CoHashMap;
 import edu.nju.software.util.CoUtils;

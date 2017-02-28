@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
-import edu.nju.software.dao.NewsDao;
-import edu.nju.software.pojo.News;
+import cebbank.gage.pojo.News;
+import cebbank.gare.dao.NewsDao;
 import edu.nju.software.service.NewsService;
 import edu.nju.software.util.CoCacheManager;
 import edu.nju.software.util.GeneralResult;

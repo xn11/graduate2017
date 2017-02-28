@@ -4,9 +4,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-import edu.nju.software.pojo.Log;
-import edu.nju.software.pojo.Project;
-import edu.nju.software.pojo.Task;
+import cebbank.gage.pojo.Log;
+import cebbank.gage.pojo.Project;
+import cebbank.gage.pojo.Task;
 import edu.nju.software.util.GeneralResult;
 
 public interface LogService {

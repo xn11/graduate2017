@@ -2,9 +2,9 @@ package edu.nju.software.service;
 
 import java.util.List;
 
-import edu.nju.software.pojo.Company;
-import edu.nju.software.pojo.OutEmployee;
-import edu.nju.software.pojo.Task;
+import cebbank.gage.pojo.Company;
+import cebbank.gage.pojo.OutEmployee;
+import cebbank.gage.pojo.Task;
 import edu.nju.software.util.GeneralResult;
 import edu.nju.software.util.NoDataResult;
 
