@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import cebbank.gage.pojo.SystemAdmin;
+import cebbank.gage.model.SystemAdmin;
 import cebbank.gare.dao.SystemAdminDao;
 
 @Repository

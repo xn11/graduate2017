@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
-import cebbank.gage.pojo.User;
-import cebbank.gare.dao.AdminDao;
+import cebbank.gage.model.User;
+import cebbank.gare.dao.UserDao;
 import edu.nju.software.service.AdminService;
 import edu.nju.software.util.CoCacheManager;
 import edu.nju.software.util.GeneralResult;
@@ -24,7 +24,7 @@ public class AdminServiceImpl implements AdminService {
 	private static final String ALL_ADMIN_CACHE_KEY = "all_admin_cache";
 	
 	@Autowired
-	private AdminDao adminDao;
+	private UserDao adminDao;
 	
 	public AdminServiceImpl() {}
 

@@ -1,6 +1,6 @@
 package cebbank.gare.dao.impl;
 
-import cebbank.gare.dao.AdminDao;
+import cebbank.gare.dao.UserDao;
 import cebbank.gare.dao.CompanyDao;
 import cebbank.gare.dao.LogDao;
 import cebbank.gare.dao.MemberDao;
@@ -11,7 +11,7 @@ import cebbank.gare.dao.TaskDao;
 
 public class DaoFactory {
 	
-	private AdminDao adminDao;
+	private UserDao adminDao;
 	private CompanyDao companyDao;
 	private LogDao logDao;
 	private MemberDao memberDao;
@@ -29,9 +29,9 @@ public class DaoFactory {
 		return instance;
 	}
 
-	public AdminDao getAdminDao() {
+	public UserDao getAdminDao() {
 		if(null == adminDao) {
-			adminDao = new AdminDaoImpl();
+			adminDao = new UserDaoImpl();
 		}
 		return adminDao;
 	}

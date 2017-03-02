@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
-import cebbank.gage.pojo.Member;
+import cebbank.gage.model.Member;
 import cebbank.gare.dao.MemberDao;
 
 @Repository

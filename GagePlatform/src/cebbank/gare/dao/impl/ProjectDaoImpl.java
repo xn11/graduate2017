@@ -7,7 +7,7 @@ import org.hibernate.Session;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
-import cebbank.gage.pojo.Project;
+import cebbank.gage.model.Project;
 import cebbank.gare.dao.ProjectDao;
 
 @Repository

@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import cebbank.gage.pojo.Log;
+import cebbank.gage.model.Log;
 import cebbank.gare.dao.LogDao;
 
 @Repository

@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
-import cebbank.gage.pojo.Member;
-import cebbank.gage.pojo.Task;
+import cebbank.gage.model.Member;
+import cebbank.gage.model.Task;
 import cebbank.gare.dao.MemberDao;
 import cebbank.gare.dao.TaskDao;
 import edu.nju.software.service.MemberService;

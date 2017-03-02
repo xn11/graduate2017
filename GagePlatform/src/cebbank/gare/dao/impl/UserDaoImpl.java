@@ -5,28 +5,28 @@ import java.util.List;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
-import cebbank.gage.pojo.User;
-import cebbank.gare.dao.AdminDao;
+import cebbank.gage.model.User;
+import cebbank.gare.dao.UserDao;
 
 @Repository
-public class AdminDaoImpl extends HibernateDaoBase implements AdminDao {
+public class UserDaoImpl extends HibernateDaoBase implements UserDao {
 	
-	public AdminDaoImpl() {}
+	public UserDaoImpl() {}
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<User> getAll() throws DataAccessException {
-		return getHibernateTemplate().find("from Admin");
+		return getHibernateTemplate().find("from User");
 	}
 
 	@Override
-	public int create(User admin) throws DataAccessException {
-		return (Integer) getHibernateTemplate().save(admin);
+	public int create(User user) throws DataAccessException {
+		return (Integer) getHibernateTemplate().save(user);
 	}
 
 	@Override
-	public void update(User admin) throws DataAccessException {
-		getHibernateTemplate().update(admin);
+	public void update(User user) throws DataAccessException {
+		getHibernateTemplate().update(user);
 	}
 
 	@Override

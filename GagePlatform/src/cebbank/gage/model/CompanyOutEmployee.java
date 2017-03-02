@@ -1,4 +1,4 @@
-package cebbank.gage.pojo;
+package cebbank.gage.model;
 
 public class CompanyOutEmployee {
 	private int id;

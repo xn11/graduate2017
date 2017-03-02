@@ -2,9 +2,9 @@ package cebbank.gare.dao;
 
 import java.util.List;
 
-import cebbank.gage.pojo.Member;
-import cebbank.gage.pojo.Task;
-import cebbank.gage.pojo.TaskAssign;
+import cebbank.gage.model.Member;
+import cebbank.gage.model.Task;
+import cebbank.gage.model.TaskAssign;
 
 public interface TaskDao {
 	public int create(Task task);

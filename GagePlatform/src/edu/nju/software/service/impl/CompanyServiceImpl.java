@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
-import cebbank.gage.pojo.Company;
+import cebbank.gage.model.Company;
 import cebbank.gare.dao.CompanyDao;
 import edu.nju.software.service.CompanyService;
 import edu.nju.software.util.CoCacheManager;

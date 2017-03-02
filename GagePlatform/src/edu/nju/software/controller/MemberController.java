@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import cebbank.gage.pojo.Company;
-import cebbank.gage.pojo.Member;
-import cebbank.gage.pojo.Task;
+import cebbank.gage.model.Company;
+import cebbank.gage.model.Member;
+import cebbank.gage.model.Task;
 import edu.nju.software.service.CompanyService;
 import edu.nju.software.service.MemberService;
 import edu.nju.software.util.CoHashMap;

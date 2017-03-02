@@ -57,7 +57,7 @@
 		<property name="mappingDirectoryLocations">
 			<list>
 				<value>
-					classpath*:/edu/nju/software/pojo/
+					classpath*:/cebbank/gare/model/
 				</value>
 			</list>
 		</property>
@@ -94,7 +94,7 @@
 		而对于增删改方法，如果出现数据库异常，则当下不会抛出异常，而是在切面抛出 如果切面抛出DataAccessException，则事务回滚 因此如果在切面内部捕获了DataAccessException而导致没有抛出，则事务不会回滚 -->
 	<aop:config>
 		<aop:pointcut id="services"
-			expression="execution(* edu.nju.software.service.impl.*.*(..))" />
+			expression="execution(* cebbank.gare.service.impl.*.*(..))" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="services" />
 	</aop:config>
 	

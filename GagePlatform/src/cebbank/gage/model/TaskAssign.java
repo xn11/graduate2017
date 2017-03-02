@@ -1,4 +1,4 @@
-package cebbank.gage.pojo;
+package cebbank.gage.model;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 

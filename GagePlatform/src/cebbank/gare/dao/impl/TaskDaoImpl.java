@@ -7,9 +7,9 @@ import org.hibernate.Session;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
-import cebbank.gage.pojo.Member;
-import cebbank.gage.pojo.Task;
-import cebbank.gage.pojo.TaskAssign;
+import cebbank.gage.model.Member;
+import cebbank.gage.model.Task;
+import cebbank.gage.model.TaskAssign;
 import cebbank.gare.dao.TaskDao;
 
 @Repository

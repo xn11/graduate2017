@@ -2,7 +2,7 @@ package cebbank.gare.dao;
 
 import java.util.List;
 
-import cebbank.gage.pojo.News;
+import cebbank.gage.model.News;
 
 public interface NewsDao {
 	public List<News> getLatestNews(int companyId);

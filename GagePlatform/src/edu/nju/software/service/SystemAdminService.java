@@ -2,7 +2,7 @@ package edu.nju.software.service;
 
 import java.util.List;
 
-import cebbank.gage.pojo.SystemAdmin;
+import cebbank.gage.model.SystemAdmin;
 import edu.nju.software.util.GeneralResult;
 
 public interface SystemAdminService {

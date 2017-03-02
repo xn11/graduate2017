@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import cebbank.gage.pojo.News;
+import cebbank.gage.model.News;
 import edu.nju.software.service.NewsService;
 import edu.nju.software.util.CoHashMap;
 import edu.nju.software.util.CoUtils;

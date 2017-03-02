@@ -1,6 +1,6 @@
 package cebbank.gare.dao;
 
-import cebbank.gage.pojo.Config;;
+import cebbank.gage.model.Config;;
 
 public interface CfgDao {
 //	public List<Cfg> getAll();

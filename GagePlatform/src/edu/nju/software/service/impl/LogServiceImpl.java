@@ -11,9 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
-import cebbank.gage.pojo.Log;
-import cebbank.gage.pojo.Project;
-import cebbank.gage.pojo.Task;
+import cebbank.gage.model.Log;
+import cebbank.gage.model.Project;
+import cebbank.gage.model.Task;
 import cebbank.gare.dao.LogDao;
 import edu.nju.software.service.LogService;
 import edu.nju.software.service.WorkService;

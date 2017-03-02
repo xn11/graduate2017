@@ -3,7 +3,7 @@ package cebbank.gare.dao;
 import java.util.Date;
 import java.util.List;
 
-import cebbank.gage.pojo.Log;
+import cebbank.gage.model.Log;
 
 public interface LogDao {
 	public List<Log> getByProject(int companyId, int projectId, Date startTime, Date endTime);

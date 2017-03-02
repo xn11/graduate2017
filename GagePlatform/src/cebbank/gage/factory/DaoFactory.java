@@ -12,13 +12,13 @@ import cebbank.gare.dao.impl.*;
 public enum DaoFactory {
 	INSTANCE;
 	
-	private AdminDao adminDao;
+	private UserDao userDao;
 
-	public AdminDao getAdminDao() {
-		if(null == adminDao) {
-			adminDao = new AdminDaoImpl();
+	public UserDao getUserDao() {
+		if(null == userDao) {
+			userDao = new UserDaoImpl();
 		}
-		return adminDao;
+		return userDao;
 	} 
 
 

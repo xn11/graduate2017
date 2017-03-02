@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import cebbank.gage.pojo.User;
+import cebbank.gage.model.User;
 import edu.nju.software.service.AdminService;
 import edu.nju.software.util.GeneralResult;
 import edu.nju.software.util.ResultCode;

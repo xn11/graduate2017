@@ -7,8 +7,8 @@ import org.hibernate.Session;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
-import cebbank.gage.pojo.Company;
-import cebbank.gage.pojo.OutEmployee;
+import cebbank.gage.model.Company;
+import cebbank.gage.model.OutEmployee;
 import cebbank.gare.dao.OutEmployeeDao;
 
 @Repository

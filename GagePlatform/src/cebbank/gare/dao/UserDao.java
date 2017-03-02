@@ -2,9 +2,9 @@ package cebbank.gare.dao;
 
 import java.util.List;
 
-import cebbank.gage.pojo.User;
+import cebbank.gage.model.User;
 
-public interface AdminDao {
+public interface UserDao {
 	public List<User> getAll();
 	
 	public int create(User admin);

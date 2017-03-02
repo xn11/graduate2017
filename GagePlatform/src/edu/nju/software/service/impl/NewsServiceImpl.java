@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
-import cebbank.gage.pojo.News;
+import cebbank.gage.model.News;
 import cebbank.gare.dao.NewsDao;
 import edu.nju.software.service.NewsService;
 import edu.nju.software.util.CoCacheManager;

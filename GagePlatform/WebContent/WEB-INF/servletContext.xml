@@ -32,7 +32,7 @@
 		<beans:property name="maxUploadSize" value="20000000" />
 
 	</beans:bean>
-	<context:component-scan base-package="edu.nju.software" />
+	<context:component-scan base-package="cebbank.gare" />
 
 
 

@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
-import cebbank.gage.pojo.Config;
+import cebbank.gage.model.Config;
 import cebbank.gare.dao.CfgDao;
 
 @Repository
