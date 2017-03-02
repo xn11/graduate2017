@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;CoPlatform&apos; to &apos;GagePlatform&apos;" description="Rename resource &apos;CoPlatform&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/CoPlatform" name="GagePlatform" stamp="1485203182947" updateReferences="true"/>
-</session>
