@@ -10,14 +10,14 @@ import org.springframework.stereotype.Component;
 import org.sword.wechat4j.message.CustomerMsg;
 import org.sword.wechat4j.response.ArticleResponse;
 
+import cebbank.gage.common.EmployeeType;
+import cebbank.gage.common.TaskStatus;
 import cebbank.gage.model.Log;
 import cebbank.gage.model.Member;
 import cebbank.gage.model.News;
 import cebbank.gage.model.OutEmployee;
 import cebbank.gage.model.SystemAdmin;
 import cebbank.gage.model.User;
-import cebbank.gare.common.EmployeeType;
-import cebbank.gare.common.TaskStatus;
 import edu.nju.software.service.AdminService;
 import edu.nju.software.service.MemberService;
 import edu.nju.software.service.OutEmployeeService;

@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
+import cebbank.gage.dao.SystemAdminDao;
 import cebbank.gage.model.SystemAdmin;
-import cebbank.gare.dao.SystemAdminDao;
 import edu.nju.software.service.SystemAdminService;
 import edu.nju.software.util.CoCacheManager;
 import edu.nju.software.util.GeneralResult;

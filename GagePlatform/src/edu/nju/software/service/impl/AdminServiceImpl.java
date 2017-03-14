@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
+import cebbank.gage.dao.UserDao;
 import cebbank.gage.model.User;
-import cebbank.gare.dao.UserDao;
 import edu.nju.software.service.AdminService;
 import edu.nju.software.util.CoCacheManager;
 import edu.nju.software.util.GeneralResult;

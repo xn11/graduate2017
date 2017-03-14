@@ -10,11 +10,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.orm.hibernate3.HibernateTemplate;
 
+import cebbank.gage.common.RoleEnum;
+import cebbank.gage.dao.UserDao;
+import cebbank.gage.dao.impl.HibernateDaoBase;
 import cebbank.gage.factory.DaoFactory;
 import cebbank.gage.model.User;
-import cebbank.gare.common.RoleEnum;
-import cebbank.gare.dao.UserDao;
-import cebbank.gare.dao.impl.HibernateDaoBase;
 
 public class DaoTest {
 
@@ -31,19 +31,22 @@ public class DaoTest {
 //		 ApplicationContext context = new
 //		 FileSystemXmlApplicationContext("WebContent/WEB-INF/applicationContext.xml");
 
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("file:E:/myData/IDE/git-graduate/graduate2017/GagePlatform/WebContent/WEB-INF/applicationContext.xml");
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("/WEB-INF/applicationContext.xml");
 		context.start();
+
 		
-		 
 //		 HibernateDaoBase hdb =  new HibernateDaoBase();
 //		 hdb.setSessionFactoryOverride((SessionFactory) context.getBean("sessionFactory"));
 //		 HibernateTemplate h =hdb.getHibernateTemplate();
 //		 System.out.println(h);
+		 
+//		 hdb.getHibernateTemplate().save(new User("test", RoleEnum.ADMIN, "test",
+//				 "12345678901", 1));
 
-		// UserDao userDao = DaoFactory.INSTANCE.getUserDao();
-		// int res = userDao.create(new User("test", RoleEnum.ADMIN, "test",
-		// "12345678901", 1));
-		// System.out.println(res);
+		 UserDao userDao = DaoFactory.INSTANCE.getUserDao();
+		 int res = userDao.create(new User("test", RoleEnum.ADMIN, "test",
+		 "12345678901", 1));
+//		 System.out.println(res);
 		// List<User> userList = userDao.getAll();
 		// System.out.println(userList.size());
 	}

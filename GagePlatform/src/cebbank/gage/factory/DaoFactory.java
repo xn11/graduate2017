@@ -1,7 +1,7 @@
 package cebbank.gage.factory;
 
-import cebbank.gare.dao.*;
-import cebbank.gare.dao.impl.*;
+import cebbank.gage.dao.*;
+import cebbank.gage.dao.impl.*;
 
 /**
  * singleton

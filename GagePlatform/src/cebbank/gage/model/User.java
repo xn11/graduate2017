@@ -3,7 +3,7 @@ package cebbank.gage.model;
 import java.io.Serializable;
 import java.sql.Date;
 
-import cebbank.gare.common.RoleEnum;
+import cebbank.gage.common.RoleEnum;
 
 /**
  * 
